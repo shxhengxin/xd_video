@@ -1,5 +1,7 @@
 package net.xdclass.demo_project.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import java.io.Serializable;
 import java.util.Date;
 
@@ -12,6 +14,8 @@ import java.util.Date;
 public class User {
     private int id;
     private String username;
+
+    @JsonIgnore
     private String pwd;
 
     public User() {
