@@ -58,4 +58,13 @@ public class JsonData {
     public static JsonData buildError(int code,String msg) {
         return  new JsonData(code,"",msg);
     }
+
+    @Override
+    public String toString() {
+        return "JsonData{" +
+                "code=" + code +
+                ", data=" + data +
+                ", msg='" + msg + '\'' +
+                '}';
+    }
 }
