@@ -3,6 +3,7 @@ package net.xdclass.demo_project;
 import junit.framework.TestCase;
 import net.xdclass.demo_project.domain.Video;
 import net.xdclass.demo_project.service.VideoService;
+import org.apache.tomcat.util.digester.DocumentProperties;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.jupiter.api.Test;
@@ -14,6 +15,7 @@ import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 
+import java.nio.charset.Charset;
 import java.util.List;
 
 /**
@@ -35,7 +37,7 @@ public class VideoTest {
                 .andExpect(MockMvcResultMatchers.status().isOk()).andReturn();
         int status = mvcResult.getResponse().getStatus();
         System.out.println(status);
-        String result = mvcResult.getResponse().getContentAsString();
+        String result = mvcResult.getResponse().getContentAsString(Charset.forName("utf-8"));
         System.out.println(result);
     }
 
