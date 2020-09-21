@@ -19,7 +19,7 @@ import java.io.PrintWriter;
  * @Author : shenhengxin  //作者
  * @Date: 2020-09-20 17:11  //时间
  */
-@WebFilter(urlPatterns = {"/api/v1/pri/*"},filterName = "loginFilter")
+//@WebFilter(urlPatterns = {"/api/v1/pri/*"},filterName = "loginFilter")
 public class LoginFilter implements Filter {
     private static final ObjectMapper objectMapper = new ObjectMapper();
     @Override
