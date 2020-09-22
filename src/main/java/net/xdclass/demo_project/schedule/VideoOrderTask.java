@@ -16,7 +16,8 @@ import java.util.Random;
 public class VideoOrderTask {
 
     //每2秒执行一次
-    @Scheduled(fixedRate = 2000)
+    //@Scheduled(fixedRate = 2000)
+    @Scheduled(cron = "*/1 * * * * *")
     public void sum() {
         System.out.println(LocalDateTime.now() + "当前交易额=" + Math.random());
     }
