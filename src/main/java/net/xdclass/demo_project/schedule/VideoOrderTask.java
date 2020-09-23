@@ -12,12 +12,12 @@ import java.util.Random;
  * @Author : shenhengxin  //作者
  * @Date: 2020-09-22 22:06  //时间
  */
-@Component
+@Component //使springboot扫描
 public class VideoOrderTask {
 
     //每2秒执行一次
     //@Scheduled(fixedRate = 2000)
-    @Scheduled(cron = "*/1 * * * * *")
+    //@Scheduled(cron = "*/1 * * * * *")
     public void sum() {
         System.out.println(LocalDateTime.now() + "当前交易额=" + Math.random());
     }
