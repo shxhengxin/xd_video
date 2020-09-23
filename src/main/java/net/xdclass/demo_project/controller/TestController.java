@@ -56,17 +56,19 @@ public class TestController {
 
 
         for (;;){
-            try {
-                String task4Result = task4.get();
-                System.out.println(task4Result);
-                String task5Result = task5.get();
-                System.out.println(task5Result);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            } catch (ExecutionException e) {
-                e.printStackTrace();
-            }finally {
-                break;
+            if(task4.isDone() && task5.isDone()) {
+                try {
+                    String task4Result = task4.get();
+                    System.out.println(task4Result);
+                    String task5Result = task5.get();
+                    System.out.println(task5Result);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                } catch (ExecutionException e) {
+                    e.printStackTrace();
+                } finally {
+                    break;
+                }
             }
         }
 
